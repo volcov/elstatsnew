@@ -1,4 +1,4 @@
-defmodule Elstasnew.Application do
+defmodule Elstatsnew.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,27 +8,27 @@ defmodule Elstasnew.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Elstasnew.Repo,
+      Elstatsnew.Repo,
       # Start the Telemetry supervisor
-      ElstasnewWeb.Telemetry,
+      ElstatsnewWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Elstasnew.PubSub},
+      {Phoenix.PubSub, name: Elstatsnew.PubSub},
       # Start the Endpoint (http/https)
-      ElstasnewWeb.Endpoint
-      # Start a worker by calling: Elstasnew.Worker.start_link(arg)
-      # {Elstasnew.Worker, arg}
+      ElstatsnewWeb.Endpoint
+      # Start a worker by calling: Elstatsnew.Worker.start_link(arg)
+      # {Elstatsnew.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Elstasnew.Supervisor]
+    opts = [strategy: :one_for_one, name: Elstatsnew.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ElstasnewWeb.Endpoint.config_change(changed, removed)
+    ElstatsnewWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -1,5 +1,5 @@
-defmodule ElstasnewWeb.ErrorView do
-  use ElstasnewWeb, :view
+defmodule ElstatsnewWeb.ErrorView do
+  use ElstatsnewWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

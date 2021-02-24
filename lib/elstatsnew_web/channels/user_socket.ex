@@ -1,8 +1,8 @@
-defmodule ElstasnewWeb.UserSocket do
+defmodule ElstatsnewWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ElstasnewWeb.RoomChannel
+  # channel "room:*", ElstatsnewWeb.RoomChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
@@ -27,7 +27,7 @@ defmodule ElstasnewWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     ElstasnewWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     ElstatsnewWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   @impl true

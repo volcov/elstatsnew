@@ -1,12 +1,12 @@
-defmodule ElstasnewWeb do
+defmodule ElstatsnewWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ElstasnewWeb, :controller
-      use ElstasnewWeb, :view
+      use ElstatsnewWeb, :controller
+      use ElstatsnewWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ElstasnewWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ElstasnewWeb
+      use Phoenix.Controller, namespace: ElstatsnewWeb
 
       import Plug.Conn
-      import ElstasnewWeb.Gettext
-      alias ElstasnewWeb.Router.Helpers, as: Routes
+      import ElstatsnewWeb.Gettext
+      alias ElstatsnewWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/elstasnew_web/templates",
-        namespace: ElstasnewWeb
+        root: "lib/elstatsnew_web/templates",
+        namespace: ElstatsnewWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule ElstasnewWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {ElstasnewWeb.LayoutView, "live.html"}
+        layout: {ElstatsnewWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule ElstasnewWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ElstasnewWeb.Gettext
+      import ElstatsnewWeb.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule ElstasnewWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import ElstasnewWeb.ErrorHelpers
-      import ElstasnewWeb.Gettext
-      alias ElstasnewWeb.Router.Helpers, as: Routes
+      import ElstatsnewWeb.ErrorHelpers
+      import ElstatsnewWeb.Gettext
+      alias ElstatsnewWeb.Router.Helpers, as: Routes
     end
   end
 

@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :elstasnew, Elstasnew.Repo,
+config :elstatsnew, Elstatsnew.Repo,
   username: "postgres",
   password: "postgres",
-  database: "elstasnew_dev",
+  database: "elstatsnew_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :elstasnew, Elstasnew.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :elstasnew, ElstasnewWeb.Endpoint,
+config :elstatsnew, ElstatsnewWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,13 +55,13 @@ config :elstasnew, ElstasnewWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :elstasnew, ElstasnewWeb.Endpoint,
+config :elstatsnew, ElstatsnewWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/elstasnew_web/(live|views)/.*(ex)$",
-      ~r"lib/elstasnew_web/templates/.*(eex)$"
+      ~r"lib/elstatsnew_web/(live|views)/.*(ex)$",
+      ~r"lib/elstatsnew_web/templates/.*(eex)$"
     ]
   ]
 

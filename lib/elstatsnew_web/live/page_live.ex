@@ -1,5 +1,5 @@
-defmodule ElstasnewWeb.PageLive do
-  use ElstasnewWeb, :live_view
+defmodule ElstatsnewWeb.PageLive do
+  use ElstatsnewWeb, :live_view
 
   @impl true
   def mount(_params, _session, socket) do
@@ -26,7 +26,7 @@ defmodule ElstasnewWeb.PageLive do
   end
 
   defp search(query) do
-    if not ElstasnewWeb.Endpoint.config(:code_reloader) do
+    if not ElstatsnewWeb.Endpoint.config(:code_reloader) do
       raise "action disabled when not in development"
     end
 

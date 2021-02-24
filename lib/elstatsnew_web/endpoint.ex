@@ -1,16 +1,16 @@
-defmodule ElstasnewWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elstasnew
+defmodule ElstatsnewWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :elstatsnew
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_elstasnew_key",
+    key: "_elstatsnew_key",
     signing_salt: "GTladZvi"
   ]
 
-  socket "/socket", ElstasnewWeb.UserSocket,
+  socket "/socket", ElstatsnewWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -22,7 +22,7 @@ defmodule ElstasnewWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :elstasnew,
+    from: :elstatsnew,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule ElstasnewWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elstasnew
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elstatsnew
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -50,5 +50,5 @@ defmodule ElstasnewWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ElstasnewWeb.Router
+  plug ElstatsnewWeb.Router
 end
