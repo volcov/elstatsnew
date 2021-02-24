@@ -1,5 +1,5 @@
-defmodule ElstasnewWeb.PageLiveTest do
-  use ElstasnewWeb.ConnCase
+defmodule ElstatsnewWeb.PageLiveTest do
+  use ElstatsnewWeb.ConnCase
 
   import Phoenix.LiveViewTest
 

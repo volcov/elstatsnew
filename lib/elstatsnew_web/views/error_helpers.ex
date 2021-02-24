@@ -1,4 +1,4 @@
-defmodule ElstasnewWeb.ErrorHelpers do
+defmodule ElstatsnewWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule ElstasnewWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(ElstasnewWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ElstatsnewWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ElstasnewWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ElstatsnewWeb.Gettext, "errors", msg, opts)
     end
   end
 end

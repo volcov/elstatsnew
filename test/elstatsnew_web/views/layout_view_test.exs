@@ -1,5 +1,5 @@
-defmodule ElstasnewWeb.LayoutViewTest do
-  use ElstasnewWeb.ConnCase, async: true
+defmodule ElstatsnewWeb.LayoutViewTest do
+  use ElstatsnewWeb.ConnCase, async: true
 
   # When testing helpers, you may want to import Phoenix.HTML and
   # use functions such as safe_to_string() to convert the helper

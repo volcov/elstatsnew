@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :elstasnew,
-  ecto_repos: [Elstasnew.Repo]
+config :elstatsnew,
+  ecto_repos: [Elstatsnew.Repo]
 
 # Configures the endpoint
-config :elstasnew, ElstasnewWeb.Endpoint,
+config :elstatsnew, ElstatsnewWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "4a710WmNZD+DOuC44hsTCxn5+dz8/mN7yPgFWI1inezWlKfNcrlyMXMXupxqqnq6",
-  render_errors: [view: ElstasnewWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Elstasnew.PubSub,
+  render_errors: [view: ElstatsnewWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Elstatsnew.PubSub,
   live_view: [signing_salt: "BXpPTbym"]
 
 # Configures Elixir's Logger

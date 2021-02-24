@@ -1,4 +1,4 @@
-defmodule ElstasnewWeb.ConnCase do
+defmodule ElstatsnewWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule ElstasnewWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ElstasnewWeb.ConnCase, async: true`, although
+  by setting `use ElstatsnewWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule ElstasnewWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import ElstasnewWeb.ConnCase
+      import ElstatsnewWeb.ConnCase
 
-      alias ElstasnewWeb.Router.Helpers, as: Routes
+      alias ElstatsnewWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint ElstasnewWeb.Endpoint
+      @endpoint ElstatsnewWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elstasnew.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elstatsnew.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Elstasnew.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Elstatsnew.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

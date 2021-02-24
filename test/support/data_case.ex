@@ -1,4 +1,4 @@
-defmodule Elstasnew.DataCase do
+defmodule Elstatsnew.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule Elstasnew.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use Elstasnew.DataCase, async: true`, although
+  by setting `use Elstatsnew.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule Elstasnew.DataCase do
 
   using do
     quote do
-      alias Elstasnew.Repo
+      alias Elstatsnew.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Elstasnew.DataCase
+      import Elstatsnew.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elstasnew.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elstatsnew.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Elstasnew.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Elstatsnew.Repo, {:shared, self()})
     end
 
     :ok

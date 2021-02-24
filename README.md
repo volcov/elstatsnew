@@ -1,4 +1,4 @@
-# Elstasnew
+# Elstatsnew
 
 To start your Phoenix server:
 

@@ -1,4 +1,4 @@
-defmodule ElstasnewWeb.Telemetry do
+defmodule ElstatsnewWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule ElstasnewWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("elstasnew.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("elstasnew.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("elstasnew.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("elstasnew.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("elstasnew.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("elstatsnew.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("elstatsnew.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("elstatsnew.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("elstatsnew.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("elstatsnew.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule ElstasnewWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {ElstasnewWeb, :count_users, []}
+      # {ElstatsnewWeb, :count_users, []}
     ]
   end
 end

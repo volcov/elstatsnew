@@ -1,11 +1,11 @@
-defmodule ElstasnewWeb.Router do
-  use ElstasnewWeb, :router
+defmodule ElstatsnewWeb.Router do
+  use ElstatsnewWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {ElstasnewWeb.LayoutView, :root}
+    plug :put_root_layout, {ElstatsnewWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule ElstasnewWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElstasnewWeb do
+  scope "/", ElstatsnewWeb do
     pipe_through :browser
 
     live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ElstasnewWeb do
+  # scope "/api", ElstatsnewWeb do
   #   pipe_through :api
   # end
 
@@ -37,7 +37,7 @@ defmodule ElstasnewWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: ElstasnewWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ElstatsnewWeb.Telemetry
     end
   end
 end
