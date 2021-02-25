@@ -1,10 +1,12 @@
 defmodule Elstatsnew.Producer do
   alias Mint.HTTP2
+  alias Broadway.Message
   use GenStage
 
   @behaviour Broadway.Producer
 
   @twitter_stream_url_v2 "https://api.twitter.com/2/tweets/sample/stream"
+  @reconnect_in_ms 5000
 
   @impl true
   def init(opts) do
@@ -69,7 +71,7 @@ defmodule Elstatsnew.Producer do
     case Jason.decode(tweet) do
       {:ok, %{"data" => data}} ->
         meta = Map.delete(data, "text")
-        text = Map.fetch!(data, "text")]
+        text = Map.fetch!(data, "text")
 
         [
           %Message{
@@ -79,10 +81,10 @@ defmodule Elstatsnew.Producer do
           }
         ]
 
-        {:error, _} ->
-          IO.puts("error decoding")
+      {:error, _} ->
+        IO.puts("error decoding")
 
-          []
+        []
     end
   end
 
