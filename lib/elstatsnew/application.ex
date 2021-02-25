@@ -5,18 +5,20 @@ defmodule Elstatsnew.Application do
 
   use Application
 
+  @impl true
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Elstatsnew.Repo,
+      # Elstatsnew.Repo,
       # Start the Telemetry supervisor
-      ElstatsnewWeb.Telemetry,
+      # ElstatsnewWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Elstatsnew.PubSub},
+      # {Phoenix.PubSub, name: Elstatsnew.PubSub},
       # Start the Endpoint (http/https)
-      ElstatsnewWeb.Endpoint
+      # ElstatsnewWeb.Endpoint,
       # Start a worker by calling: Elstatsnew.Worker.start_link(arg)
       # {Elstatsnew.Worker, arg}
+      {Elstatsnew, twitter_bearer_token: System.fetch_env!("TWITTER_BEARER_TOKEN")}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -27,6 +29,7 @@ defmodule Elstatsnew.Application do
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
+  @impl true
   def config_change(changed, _new, removed) do
     ElstatsnewWeb.Endpoint.config_change(changed, removed)
     :ok
