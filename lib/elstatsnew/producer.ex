@@ -61,6 +61,9 @@ defmodule Elstatsnew.Producer do
 
           {:done, ^ref} ->
             []
+
+          {_, _ref, _other} ->
+            []
         end
       end)
 
