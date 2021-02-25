@@ -43,6 +43,44 @@ defmodule Elstatsnew.Producer do
     {:noreply, [], connect_to_stream(state)}
   end
 
+  defp process_responses(responses, state) do
+    ref = state.request_ref
+
+    tweets =
+      Enum.flat_map(responses, fn response ->
+        case response do
+          {:data, ^ref, tweet} ->
+            decode_tweet(tweet)
+
+          {:done, ^ref} ->
+            []
+        end
+      end)
+
+    {:noreply, tweets, state}
+  end
+
+  defp decode_tweet(tweet) do
+    case Jason.decode(tweet) do
+      {:ok, %{"data" => data}} ->
+        meta = Map.delete(data, "text")
+        text = Map.fetch!(data, "text")]
+
+        [
+          %Message{
+            data: text,
+            metadata: meta,
+            acknowledger: {Broadway.NoopAcknowledger, nil, nil}
+          }
+        ]
+
+        {:error, _} ->
+          IO.puts("error decoding")
+
+          []
+    end
+  end
+
   defp connect_to_stream(state) do
     {:ok, conn} = HTTP2.connect(:https, state.uri.host, state.uri.port)
 
