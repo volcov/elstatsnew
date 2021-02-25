@@ -43,6 +43,11 @@ defmodule Elstatsnew.Producer do
     {:noreply, [], connect_to_stream(state)}
   end
 
+  @impl true
+  def handle_demand(_demand, state) do
+    {:noreply, [], state}
+  end
+
   defp process_responses(responses, state) do
     ref = state.request_ref
 
