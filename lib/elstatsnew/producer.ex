@@ -100,7 +100,7 @@ defmodule Elstatsnew.Producer do
         nil
       )
 
-    %{state | request_ref: request_ref, conn: conn, connection_timer: nil}
+    Map.merge(state, %{request_ref: request_ref, conn: conn, connection_timer: nil})
   end
 
   defp schedule_connection(interval) do
